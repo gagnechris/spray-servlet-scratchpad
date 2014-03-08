@@ -1,12 +1,15 @@
 package com.beachape.models
 
+import com.wordnik.swagger.annotations.ApiModel
+import com.wordnik.swagger.annotations.ApiModelProperty
+
 import spray.httpx.SprayJsonSupport
 import spray.json.DefaultJsonProtocol
-import com.wordnik.swagger.annotations.ApiModel
 
 
 @ApiModel(description = "URL Scrape message")
-case class UrlScrape(url: String)
+case class UrlScrape(
+  @ApiModelProperty(value = "TODO: url description") val url: String)
 
 /**
  * Acts as an in-scope unmarshaller of JSON content if we

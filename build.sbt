@@ -11,21 +11,22 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= {
-  val akkaV = "2.3.0"
-  val sprayV = "1.3.0"
+  val akkaV = "2.2.3"
+  val sprayV = "1.2.0"
   Seq(
     "io.spray"            %   "spray-servlet" % sprayV,
-    "io.spray" %%  "spray-json" % "1.2.5",
+    "io.spray"            %%  "spray-json" % "1.2.5",
     "io.spray"            %   "spray-routing" % sprayV,
     "io.spray"            %   "spray-client" % sprayV,
     "io.spray"            %   "spray-testkit" % sprayV % "test",
-    "org.eclipse.jetty" % "jetty-webapp" % "9.1.0.v20131115" % "container",
-    "org.eclipse.jetty" % "jetty-plus"   % "9.1.0.v20131115" % "container",
+    "org.eclipse.jetty"   % "jetty-webapp" % "9.1.0.v20131115" % "container",
+    "org.eclipse.jetty"   % "jetty-plus"   % "9.1.0.v20131115" % "container",
     "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" % "container"  artifacts Artifact("javax.servlet", "jar", "jar"),
     "com.typesafe.akka"   %%  "akka-actor"    % akkaV,
     "com.typesafe.akka"   %%  "akka-testkit"  % akkaV % "test",
     "org.specs2"          %%  "specs2"        % "2.2.3" % "test",
-    "com.wordnik" %% "swagger-core" % "1.3.0"
+    "com.wordnik"         %%  "swagger-core"   % "1.3.0" exclude("io.spray", "spray-routing"),
+    "com.wordnik"         %%  "swagger-annotations" % "1.3.0"
   )
 }
 
